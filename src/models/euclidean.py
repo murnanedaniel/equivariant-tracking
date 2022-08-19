@@ -4,7 +4,7 @@ import torch.nn as nn
 from torch_geometric.nn import MessagePassing
 from torch.nn import Sequential, Linear
 
-from utils import euclidean_feats, unsorted_segment_sum
+from .utils import euclidean_feats, unsorted_segment_sum
 
 
 class EB(nn.Module):
@@ -50,10 +50,11 @@ class EB(nn.Module):
         return x
 
 
-    def forward(self, x, edge_index):
-        norms, dots, x_diff = euclidean_feats(edge_index, x)
-        m = self.message(norms, dots)
+    def forward(self, v, s, edge_index):
+        norms, dots, x_diff = euclidean_feats(edge_index, v)
+        m = self.message(norms, dots, s)
         x_tilde = self.x_model(x, edge_index, x_diff, m)
+        s_tilde = self.s_model(s, edge_index, m)
         return x_tilde
 
 
@@ -87,8 +88,22 @@ class EuclidNet(nn.Module):
             Linear(self.n_hidden, self.n_output),
         )
 
+        self.scalar_input = nn.Sequential(
+            Linear(2, self.n_hidden), nn.ReLU(), Linear(self.n_hidden, self.n_hidden), nn.ReLU()
+        )
+
     def forward(self, x, edge_index):
+
+        v = x[:, :2]
+        scalar_1 = x[:, 2]
+        scalar_2 = x[:, 0]**2 + x[:, 1]**2
+        s = self.scalar_input(
+            torch.stack([scalar_1, scalar_2], dim=1)
+        )
+
         for i in range(self.n_layers):
-            x = self.EBs[i](x, edge_index)
+
+            v, s = self.EBs[i](v, s, edge_index)
+
         m = torch.cat([x[edge_index[1]], x[edge_index[0]]], dim=1)
         return torch.sigmoid(self.edge_mlp(m))

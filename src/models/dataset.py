@@ -41,5 +41,5 @@ class GraphDataset(Dataset):
                         edge_attr=torch.transpose(edge_attr, 0, 1),
                         y=y, pid=pid, pt=pt, eta=eta)
             data.num_nodes = len(x)
-            print(data)
+            
         return data  
