@@ -55,7 +55,6 @@ class EB(nn.Module):
             e_ij = torch.cat([norms, dots], dim=1)
         e_ij = self.phi_e(e_ij) # The edge features
         m_ij = self.phi_m(e_ij)
-        # m_ij = e_ij * w # The weighted edge features
         return m_ij, e_ij
 
     def x_model(self, x, edge_index, x_diff, m):
@@ -122,7 +121,6 @@ class EuclidNet(GNNBase):
         for i in range(self.n_graph_iters):                                                        
             v, s, e = self.EBs[i](v, edge_index, s, e)
 
-        # m = torch.cat([v[edge_index[1]], v[edge_index[0]]], dim=1)
         if self.hparams["equi_output"]:
             m = torch.cat([s[edge_index[1]], s[edge_index[0]], e], dim=1)
         else:

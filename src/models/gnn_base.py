@@ -101,17 +101,10 @@ class GNNBase(LightningModule):
     
     def get_loss(self, output, truth, weight):
 
-        positive_loss = F.binary_cross_entropy_with_logits(
-            output[truth], torch.ones(truth.sum()).to(self.device)
-        )
+        positive_loss = F.binary_cross_entropy_with_logits(output[truth], torch.ones(truth.sum()).to(self.device))
+        negative_loss = F.binary_cross_entropy_with_logits(output[~truth], torch.zeros((~truth).sum()).to(self.device))
 
-        negative_loss = F.binary_cross_entropy_with_logits(
-            output[~truth], torch.zeros((~truth).sum()).to(self.device)
-        )
-
-        loss = positive_loss*weight + negative_loss
-
-        return loss
+        return positive_loss * weight + negative_loss
 
     def training_step(self, batch, batch_idx):
 
@@ -133,41 +126,22 @@ class GNNBase(LightningModule):
 
         return loss
 
-    def log_metrics(self, output, batch, loss, log):
-
-        preds = torch.sigmoid(output) > self.hparams["edge_cut"]
-
-        # Positives
+    def log_metrics(self, output, batch, loss, prefix):
+        score = torch.sigmoid(output)
+        preds = score > self.hparams["edge_cut"]
         edge_positive = preds.sum().float()
-
-        # Signal true & signal tp
         sig_truth = batch[self.hparams["truth_key"]]
         sig_true = sig_truth.sum().float()
         sig_true_positive = (sig_truth.bool() & preds).sum().float()
-        sig_auc = roc_auc_score(
-            sig_truth.bool().cpu().detach(), torch.sigmoid(output).cpu().detach()
-        )
-
-        # Eff, pur, auc
+        sig_auc = roc_auc_score(sig_truth.bool().cpu().detach(), score.cpu().detach())
         sig_eff = sig_true_positive / sig_true
         sig_pur = sig_true_positive / edge_positive
+        current_lr = self.optimizers().param_groups[0]["lr"]
+        self.log_dict({f"{prefix}val_loss": loss, f"{prefix}current_lr": current_lr, f"{prefix}eff": sig_eff, f"{prefix}pur": sig_pur, f"{prefix}auc": sig_auc}, sync_dist=True)
 
-        if log:
-            current_lr = self.optimizers().param_groups[0]["lr"]
-            self.log_dict(
-                {
-                    "val_loss": loss,
-                    "current_lr": current_lr,
-                    "eff": sig_eff,
-                    "pur": sig_pur,
-                    "auc": sig_auc,
-                },
-                sync_dist=True,
-            )
+        return score, sig_truth, sig_eff, sig_pur, sig_auc
 
-        return preds
-
-    def shared_evaluation(self, batch, batch_idx, log=True):
+    def shared_evaluation(self, batch, batch_idx, prefix=""):
 
         truth = batch[self.hparams["truth_key"]].bool()
         edges = batch.edge_index
@@ -183,9 +157,9 @@ class GNNBase(LightningModule):
 
         loss = self.get_loss(output, truth, weight)
 
-        preds = self.log_metrics(output, batch, loss, log)
+        score, truth, eff, pur, auc = self.log_metrics(output, batch, loss, prefix)
 
-        return {"loss": loss, "preds": preds, "score": torch.sigmoid(output)}
+        return {"loss": loss, "score": score, "truth": truth, "eff": eff, "pur": pur, "auc": auc}
 
     def validation_step(self, batch, batch_idx):
 
@@ -194,10 +168,7 @@ class GNNBase(LightningModule):
         return outputs["loss"]
 
     def test_step(self, batch, batch_idx):
-
-        outputs = self.shared_evaluation(batch, batch_idx, log=False)
-
-        return outputs
+        return self.shared_evaluation(batch, batch_idx, prefix="test/")
 
     def test_step_end(self, output_results):
 

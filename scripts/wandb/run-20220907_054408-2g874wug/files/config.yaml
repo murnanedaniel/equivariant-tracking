@@ -1,0 +1,3266 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.12.17
+    framework: lightning
+    is_jupyter_run: false
+    is_kaggle_kernel: true
+    m:
+    - 1: trainer/global_step
+      6:
+      - 3
+    - 1: val_loss
+      6:
+      - 3
+      7:
+      - 1
+    - 1: auc
+      6:
+      - 3
+      7:
+      - 2
+    - 1: parameters/EBs\.0\.phi_e\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_e\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_e\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_e\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_e\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_e\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_e\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_e\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_e\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_e\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_e\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_e\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_e\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_e\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_e\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_e\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_e\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_e\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.9\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.9\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.9\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.9\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.9\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_x\.9\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_m\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_m\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_m\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_m\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_m\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_m\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_m\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_m\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_m\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_m\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_m\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_m\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_m\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_m\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_m\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_m\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_m\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_m\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_s\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_s\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_s\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_s\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_s\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_s\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_s\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_s\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_s\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_s\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_s\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_s\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_s\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_s\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_s\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_s\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_s\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.0\.phi_s\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_e\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_e\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_e\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_e\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_e\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_e\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_e\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_e\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_e\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_e\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_e\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_e\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_e\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_e\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_e\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_e\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_e\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_e\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.9\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.9\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.9\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.9\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.9\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_x\.9\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_m\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_m\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_m\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_m\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_m\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_m\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_m\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_m\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_m\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_m\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_m\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_m\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_m\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_m\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_m\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_m\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_m\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_m\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_s\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_s\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_s\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_s\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_s\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_s\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_s\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_s\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_s\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_s\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_s\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_s\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_s\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_s\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_s\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_s\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_s\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.1\.phi_s\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_e\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_e\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_e\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_e\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_e\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_e\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_e\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_e\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_e\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_e\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_e\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_e\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_e\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_e\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_e\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_e\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_e\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_e\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.9\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.9\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.9\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.9\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.9\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_x\.9\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_m\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_m\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_m\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_m\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_m\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_m\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_m\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_m\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_m\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_m\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_m\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_m\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_m\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_m\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_m\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_m\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_m\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_m\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_s\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_s\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_s\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_s\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_s\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_s\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_s\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_s\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_s\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_s\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_s\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_s\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_s\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_s\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_s\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_s\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_s\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/EBs\.2\.phi_s\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.9\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.9\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.9\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.9\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.9\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/edge_mlp\.9\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: current_lr
+      5: 1
+      6:
+      - 1
+    - 1: eff
+      5: 1
+      6:
+      - 1
+    - 1: pur
+      5: 1
+      6:
+      - 1
+    - 1: epoch
+      5: 1
+      6:
+      - 1
+    - 1: train_loss
+      5: 1
+      6:
+      - 1
+    - 1: test/val_loss
+      5: 1
+      6:
+      - 1
+    - 1: test/current_lr
+      5: 1
+      6:
+      - 1
+    - 1: test/eff
+      5: 1
+      6:
+      - 1
+    - 1: test/pur
+      5: 1
+      6:
+      - 1
+    - 1: test/auc
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_e\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_e\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_e\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_e\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_e\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_e\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_e\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_e\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_e\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_e\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_e\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_e\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_e\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_e\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_e\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_e\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_e\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_e\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.9\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.9\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.9\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.9\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.9\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_x\.9\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_m\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_m\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_m\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_m\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_m\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_m\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_m\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_m\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_m\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_m\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_m\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_m\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_m\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_m\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_m\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_m\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_m\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_m\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_s\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_s\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_s\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_s\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_s\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_s\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_s\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_s\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_s\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_s\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_s\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_s\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_s\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_s\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_s\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_s\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_s\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.0\.phi_s\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_e\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_e\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_e\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_e\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_e\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_e\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_e\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_e\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_e\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_e\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_e\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_e\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_e\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_e\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_e\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_e\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_e\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_e\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.9\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.9\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.9\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.9\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.9\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_x\.9\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_m\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_m\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_m\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_m\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_m\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_m\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_m\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_m\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_m\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_m\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_m\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_m\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_m\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_m\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_m\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_m\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_m\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_m\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_s\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_s\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_s\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_s\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_s\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_s\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_s\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_s\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_s\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_s\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_s\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_s\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_s\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_s\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_s\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_s\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_s\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.1\.phi_s\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_e\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_e\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_e\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_e\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_e\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_e\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_e\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_e\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_e\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_e\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_e\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_e\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_e\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_e\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_e\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_e\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_e\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_e\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.9\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.9\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.9\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.9\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.9\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_x\.9\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_m\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_m\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_m\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_m\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_m\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_m\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_m\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_m\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_m\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_m\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_m\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_m\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_m\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_m\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_m\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_m\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_m\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_m\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_s\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_s\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_s\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_s\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_s\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_s\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_s\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_s\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_s\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_s\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_s\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_s\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_s\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_s\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_s\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_s\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_s\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1EBs\.2\.phi_s\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.9\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.9\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.9\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.9\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.9\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_1edge_mlp\.9\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_e\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_e\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_e\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_e\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_e\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_e\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_e\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_e\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_e\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_e\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_e\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_e\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_e\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_e\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_e\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_e\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_e\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_e\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.9\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.9\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.9\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.9\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.9\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_x\.9\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_m\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_m\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_m\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_m\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_m\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_m\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_m\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_m\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_m\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_m\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_m\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_m\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_m\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_m\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_m\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_m\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_m\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_m\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_s\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_s\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_s\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_s\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_s\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_s\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_s\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_s\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_s\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_s\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_s\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_s\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_s\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_s\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_s\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_s\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_s\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.0\.phi_s\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_e\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_e\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_e\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_e\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_e\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_e\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_e\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_e\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_e\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_e\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_e\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_e\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_e\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_e\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_e\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_e\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_e\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_e\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.9\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.9\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.9\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.9\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.9\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_x\.9\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_m\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_m\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_m\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_m\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_m\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_m\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_m\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_m\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_m\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_m\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_m\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_m\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_m\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_m\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_m\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_m\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_m\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_m\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_s\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_s\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_s\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_s\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_s\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_s\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_s\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_s\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_s\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_s\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_s\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_s\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_s\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_s\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_s\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_s\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_s\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.1\.phi_s\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_e\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_e\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_e\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_e\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_e\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_e\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_e\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_e\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_e\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_e\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_e\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_e\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_e\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_e\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_e\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_e\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_e\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_e\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.9\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.9\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.9\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.9\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.9\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_x\.9\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_m\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_m\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_m\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_m\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_m\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_m\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_m\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_m\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_m\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_m\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_m\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_m\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_m\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_m\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_m\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_m\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_m\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_m\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_s\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_s\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_s\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_s\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_s\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_s\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_s\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_s\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_s\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_s\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_s\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_s\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_s\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_s\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_s\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_s\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_s\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2EBs\.2\.phi_s\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.0\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.0\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.0\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.0\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.0\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.0\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.3\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.3\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.3\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.3\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.3\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.3\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.6\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.6\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.6\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.6\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.6\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.6\.bias.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.9\.weight._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.9\.weight.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.9\.weight.bins
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.9\.bias._type
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.9\.bias.values
+      5: 1
+      6:
+      - 1
+    - 1: parameters/graph_2edge_mlp\.9\.bias.bins
+      5: 1
+      6:
+      - 1
+    python_version: 3.8.12
+    start_time: 1662554648
+    t:
+      1:
+      - 1
+      - 5
+      - 9
+      - 41
+      - 53
+      - 55
+      2:
+      - 1
+      - 5
+      - 9
+      - 41
+      - 53
+      - 55
+      3:
+      - 1
+      - 7
+      - 24
+      4: 3.8.12
+      5: 0.12.17
+      8:
+      - 2
+      - 5
+artifacts:
+  desc: null
+  value: /global/cfs/cdirs/m3443/data/lightning_models/lightning_checkpoints
+batch_size:
+  desc: null
+  value: 4
+c_weight:
+  desc: null
+  value: 0.1
+data_split:
+  desc: null
+  value:
+  - 100
+  - 100
+  - 100
+edge_cut:
+  desc: null
+  value: 0.5
+equi_output:
+  desc: null
+  value: true
+factor:
+  desc: null
+  value: 0.8
+gpus:
+  desc: null
+  value: 1
+input_dir:
+  desc: null
+  value: /global/cfs/cdirs/m3443/usr/ameyat/hitgraphs/geometric/2p0
+lr:
+  desc: null
+  value: 0.001
+max_epochs:
+  desc: null
+  value: 3
+model:
+  desc: null
+  value: EuclidNet
+n_graph_iters:
+  desc: null
+  value: 3
+n_hidden:
+  desc: null
+  value: 32
+n_input:
+  desc: null
+  value: 3
+n_layers:
+  desc: null
+  value: 3
+n_output:
+  desc: null
+  value: 1
+nodes:
+  desc: null
+  value: 1
+num_runs:
+  desc: null
+  value: 3
+patience:
+  desc: null
+  value: 30
+project:
+  desc: null
+  value: EuclideanTracking_SO(3)_MultiTrain
+pt:
+  desc: null
+  value: 2
+truth_key:
+  desc: null
+  value: y
+vector_dim:
+  desc: null
+  value: 3
+warmup:
+  desc: null
+  value: 10
+weight:
+  desc: null
+  value: 0.5

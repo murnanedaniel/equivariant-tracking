@@ -8,7 +8,7 @@ class GraphDataset(Dataset):
                  graph_files=[]):
         super(GraphDataset, self).__init__(None, transform, pre_transform)
         self.graph_files = graph_files
-    
+
     @property
     def raw_file_names(self):
         return self.graph_files
@@ -19,11 +19,11 @@ class GraphDataset(Dataset):
 
     def len(self):
         return len(self.graph_files)
-        
+
     def get(self, idx):
         with np.load(self.graph_files[idx]) as f:
             x = torch.from_numpy(f['x'])
-            
+
             # Convert to cartesian space
             x[:, 0], x[:, 1] = x[:, 0]*torch.cos(np.pi*x[:, 1]), x[:, 0]*torch.sin(np.pi*x[:, 1])
             edge_attr = torch.from_numpy(f['edge_attr'])
@@ -44,5 +44,5 @@ class GraphDataset(Dataset):
                         edge_attr=torch.transpose(edge_attr, 0, 1),
                         y=y, pid=pid, pt=pt, eta=eta)
             data.num_nodes = len(x)
-            
-        return data  
+
+        return data

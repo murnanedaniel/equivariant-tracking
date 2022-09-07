@@ -1,0 +1,26 @@
+{
+    "os": "Linux-5.3.18-150300.59.68_11.0.76-cray_shasta_c-x86_64-with-glibc2.10",
+    "python": "3.8.12",
+    "heartbeatAt": "2022-09-07T12:44:09.633833",
+    "startedAt": "2022-09-07T12:44:08.110360",
+    "docker": null,
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "gpu_count": 4,
+    "cpu_count": 128,
+    "cuda": null,
+    "args": [
+        "multi_run_config.yaml"
+    ],
+    "state": "running",
+    "program": "multi_train.py",
+    "codePath": "scripts/multi_train.py",
+    "git": {
+        "remote": "git@github.com:murnanedaniel/equivariant-tracking.git",
+        "commit": "727b9b0743dd13d860254e9de347032537025690"
+    },
+    "email": "murnanedaniel@hotmail.com",
+    "root": "/global/u2/d/danieltm/ExaTrkX/Equivariance/equivariant-tracking",
+    "host": "nid001700",
+    "username": "danieltm",
+    "executable": "/global/homes/d/danieltm/.conda/envs/exatrkx-gpu/bin/python"
+}

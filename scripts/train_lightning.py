@@ -52,23 +52,18 @@ def parse_args():
     return parser.parse_args()
 
 
-def main():
-    print("Running main")
-    print(time.ctime())
+def train(config, root_dir, checkpoint, random_seed):
+    print("Running train")
 
-    args = parse_args()
+    if checkpoint is not None:
+        default_configs = torch.load(checkpoint)["hyper_parameters"]
+    else:
+        default_configs = config
 
-    with open(args.config) as file:
-        print(f"Using config file: {args.config}")
-        default_configs = yaml.load(file, Loader=yaml.FullLoader)
-
-    if args.checkpoint is not None:
-        default_configs = torch.load(args.checkpoint)["hyper_parameters"]
-    
     # Set random seed
-    if args.random_seed is not None:
-        set_random_seed(args.random_seed)
-        default_configs["random_seed"] = args.random_seed
+    if random_seed is not None:
+        set_random_seed(random_seed)
+        default_configs["random_seed"] = random_seed
 
     elif "random_seed" in default_configs.keys():
         set_random_seed(default_configs["random_seed"])
@@ -82,19 +77,20 @@ def main():
         monitor="auc", mode="max", save_top_k=2, save_last=True
     )
     
+    wandb.init() # Need this to avoid logging to the same wandb run
     logger = WandbLogger(
         project=default_configs["project"],
         save_dir=default_configs["artifacts"],
     )
     logger.watch(model, log="all")
 
-    if args.root_dir is None: 
+    if root_dir is None: 
         if "SLURM_JOB_ID" in os.environ:
             default_root_dir = os.path.join(".", os.environ["SLURM_JOB_ID"])
         else:
             default_root_dir = None
     else:
-        default_root_dir = os.path.join(".", args.root_dir)
+        default_root_dir = os.path.join(".", root_dir)
         
     accelerator = "gpu" if torch.cuda.is_available() else None
 
@@ -102,13 +98,33 @@ def main():
         accelerator = accelerator,
         devices=default_configs["gpus"],
         num_nodes=default_configs["nodes"],
+        auto_select_gpus=True,
         max_epochs=default_configs["max_epochs"],
         logger=logger,
         strategy=CustomDDPPlugin(find_unused_parameters=False),
         callbacks=[checkpoint_callback],
         default_root_dir=default_root_dir
     )
-    trainer.fit(model, ckpt_path=args.checkpoint)
+    trainer.fit(model, ckpt_path=checkpoint)
+
+    return model, trainer
+
+def test(model, trainer):
+
+    output = trainer.test(model)
+
+    return output
+
+def main():
+    print(time.ctime())
+
+    args = parse_args()
+
+    with open(args.config) as file:
+        print(f"Using config file: {args.config}")
+        default_configs = yaml.load(file, Loader=yaml.FullLoader)
+
+    model, trainer = train(default_configs, args.root_dir, args.checkpoint, args.random_seed)
 
 
 if __name__ == "__main__":
