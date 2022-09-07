@@ -4,34 +4,37 @@ import torch.nn as nn
 from torch_geometric.nn import MessagePassing
 from torch.nn import Sequential, Linear
 
-from .utils import euclidean_feats, unsorted_segment_sum
-
+from ..utils import euclidean_feats, unsorted_segment_sum, make_mlp
+from ..gnn_base import LargeGNNBase
 
 class EB(nn.Module):
     # TODO: Add support for scalar quantities
-    def __init__(self, n_hidden: int, c_weight: float = 1.0) -> None:
+    def __init__(self, n_hidden: int = 32, nb_node_layer : int = 2, c_weight: float = 1.0) -> None:
         super(EB, self).__init__()
         # dims for norm & inner product + (delr, delphi, delz, delR)
         self.n_edge_attributes = 2
         # Controls the scale of x during updates
         self.c_weight = c_weight
 
-        # MLP to create the message
-        self.phi_e = Sequential(
-            Linear(self.n_edge_attributes, n_hidden, bias=False),
-            nn.BatchNorm1d(n_hidden),
-            nn.ReLU(),
-            nn.Linear(n_hidden, n_hidden),
-            nn.ReLU(),
+        self.phi_e = make_mlp(
+            self.n_edge_attributes,
+            [n_hidden] * nb_node_layer,
+            layer_norm=True,
         )
 
-        layer = Linear(n_hidden, 1, bias=False)
-        nn.init.xavier_uniform_(layer.weight, gain=0.001)
         # MLP to generate attention weights
-        self.phi_x = Sequential(nn.Linear(n_hidden, n_hidden), nn.ReLU(), layer)
+        self.phi_x = make_mlp(
+            n_hidden,
+            [n_hidden] * nb_node_layer,
+            layer_norm=True,
+        )
 
         # MLP to generate weights for the messages
-        self.phi_m = Sequential(nn.Linear(n_hidden, 1), nn.Sigmoid())
+        self.phi_m = make_mlp(
+            n_hidden,
+            [n_hidden] * nb_node_layer + [1],
+            output_activation="Sigmoid"
+        )
 
     def message(self, norms, dots):
         m_ij = torch.cat([norms, dots], dim=1)
@@ -58,7 +61,7 @@ class EB(nn.Module):
         return x_tilde
 
 
-class EuclidNet(nn.Module):
+class EuclidNet(LargeGNNBase):
     def __init__(
         self,
         n_input: int,

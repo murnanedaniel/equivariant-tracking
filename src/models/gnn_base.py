@@ -10,7 +10,7 @@ from torch.nn import Linear
 import torch
 import numpy as np
 
-from .utils import load_dataset, purity_sample, LargeDataset
+from .utils import load_dataset
 from sklearn.metrics import roc_auc_score
 
 
@@ -30,19 +30,11 @@ class GNNBase(LightningModule):
 
         if self.trainset is None:
             print("Setting up dataset")
-            input_subdirs = [None, None, None]
-            input_subdirs[: len(self.hparams["datatype_names"])] = [
-                os.path.join(self.hparams["input_dir"], datatype)
-                for datatype in self.hparams["datatype_names"]
-            ]
-            self.trainset, self.valset, self.testset = [
-                load_dataset(
-                    input_subdir=input_subdir,
-                    num_events=self.hparams["datatype_split"][i],
-                    **self.hparams
-                )
-                for i, input_subdir in enumerate(input_subdirs)
-            ]
+
+            self.trainset, self.valset, self.testset = load_dataset(
+                    input_dir=self.hparams["input_dir"],
+                    data_split=self.hparams["data_split"],
+            )
 
         if (
             (self.trainer)
@@ -50,18 +42,13 @@ class GNNBase(LightningModule):
             and ("_experiment" in self.logger.__dict__.keys())
         ):
             self.logger.experiment.define_metric("val_loss", summary="min")
-            self.logger.experiment.define_metric("sig_auc", summary="max")
-            self.logger.experiment.define_metric("tot_auc", summary="max")
-            self.logger.experiment.define_metric("sig_fake_ratio", summary="max")
-            self.logger.experiment.define_metric("custom_f1", summary="max")
-            self.logger.experiment.log({"sig_auc": 0})
-            self.logger.experiment.log({"sig_fake_ratio": 0})
-            self.logger.experiment.log({"custom_f1": 0})
+            self.logger.experiment.define_metric("auc", summary="max")
+            self.logger.experiment.log({"auc": 0})
 
     def train_dataloader(self):
         if self.trainset is not None:
             return DataLoader(
-                self.trainset, batch_size=1, num_workers=4
+                self.trainset, batch_size=self.hparams["batch_size"], num_workers=4
             )  # , pin_memory=True, persistent_workers=True)
         else:
             return None
@@ -107,74 +94,46 @@ class GNNBase(LightningModule):
 
     def get_input_data(self, batch):
 
-        if self.hparams["cell_channels"] > 0:
-            input_data = torch.cat(
-                [batch.cell_data[:, : self.hparams["cell_channels"]], batch.x], axis=-1
-            )
-            input_data[input_data != input_data] = 0
-        else:
-            input_data = batch.x
-            input_data[input_data != input_data] = 0
+        input_data = batch.x
+        input_data[input_data != input_data] = 0
 
         return input_data
-
-    def handle_directed(self, batch, edge_sample, truth_sample, sample_indices):
-
-        edge_sample = torch.cat([edge_sample, edge_sample.flip(0)], dim=-1)
-        truth_sample = truth_sample.repeat(2)
-        sample_indices = sample_indices.repeat(2)
-
-        if ("directed" in self.hparams.keys()) and self.hparams["directed"]:
-            direction_mask = batch.x[edge_sample[0], 0] < batch.x[edge_sample[1], 0]
-            edge_sample = edge_sample[:, direction_mask]
-            truth_sample = truth_sample[direction_mask]
-
-        return edge_sample, truth_sample, sample_indices
     
+    def get_loss(self, output, truth, weight):
+
+        positive_loss = F.binary_cross_entropy_with_logits(
+            output[truth], torch.ones(truth.sum()).to(self.device)
+        )
+
+        negative_loss = F.binary_cross_entropy_with_logits(
+            output[~truth], torch.zeros((~truth).sum()).to(self.device)
+        )
+
+        loss = positive_loss*weight + negative_loss
+
+        return loss
+
     def training_step(self, batch, batch_idx):
 
-        truth = batch[self.hparams["truth_key"]]
-
-        if ("train_purity" in self.hparams.keys()) and (
-            self.hparams["train_purity"] > 0
-        ):
-            edge_sample, truth_sample, sample_indices = purity_sample(
-                truth, batch.edge_index, self.hparams["train_purity"]
-            )
-        else:
-            edge_sample, truth_sample, sample_indices = batch.edge_index, truth, torch.arange(batch.edge_index.shape[1])
-            
-        edge_sample, truth_sample, sample_indices = self.handle_directed(batch, edge_sample, truth_sample, sample_indices)
+        truth = batch[self.hparams["truth_key"]].bool()
+        edges = batch.edge_index
 
         weight = (
             torch.tensor(self.hparams["weight"])
             if ("weight" in self.hparams)
-            else torch.tensor((~truth_sample.bool()).sum() / truth_sample.sum())
+            else torch.tensor((~truth.bool()).sum() / truth.sum())
         )
 
         input_data = self.get_input_data(batch)
-        output = self(input_data, edge_sample).squeeze()
+        output = self(input_data, edges).squeeze()
 
-        if self.hparams["mask_background"]:
-            y_subset = truth_sample | ~batch.y_pid[sample_indices].bool()
-            output, truth_sample = output[y_subset], truth_sample[y_subset]
-
-
-        positive_loss = F.binary_cross_entropy_with_logits(
-            output[truth_sample], torch.ones(truth_sample.sum()).to(self.device)
-        )
-
-        negative_loss = F.binary_cross_entropy_with_logits(
-            output[~truth_sample], torch.zeros((~truth_sample).sum()).to(self.device)
-        )
-
-        loss = positive_loss*weight + negative_loss
+        loss = self.get_loss(output, truth, weight)
 
         self.log("train_loss", loss, on_step=False, on_epoch=True)
 
         return loss
 
-    def log_metrics(self, output, sample_indices, batch, loss, log):
+    def log_metrics(self, output, batch, loss, log):
 
         preds = torch.sigmoid(output) > self.hparams["edge_cut"]
 
@@ -182,31 +141,16 @@ class GNNBase(LightningModule):
         edge_positive = preds.sum().float()
 
         # Signal true & signal tp
-        sig_truth = batch[self.hparams["truth_key"]][sample_indices]
+        sig_truth = batch[self.hparams["truth_key"]]
         sig_true = sig_truth.sum().float()
         sig_true_positive = (sig_truth.bool() & preds).sum().float()
         sig_auc = roc_auc_score(
             sig_truth.bool().cpu().detach(), torch.sigmoid(output).cpu().detach()
         )
 
-        # Total true & total tp
-        tot_truth = (batch.y_pid.bool() | batch.y.bool())[sample_indices]
-        tot_true = tot_truth.sum().float()
-        tot_true_positive = (tot_truth.bool() & preds).sum().float()
-        tot_auc = roc_auc_score(
-            tot_truth.bool().cpu().detach(), torch.sigmoid(output).cpu().detach()
-        )
-
         # Eff, pur, auc
         sig_eff = sig_true_positive / sig_true
         sig_pur = sig_true_positive / edge_positive
-        tot_eff = tot_true_positive / tot_true
-        tot_pur = tot_true_positive / edge_positive
-
-        # Combined metrics
-        double_auc = sig_auc * tot_auc
-        custom_f1 = 2 * sig_eff * tot_pur / (sig_eff + tot_pur)
-        sig_fake_ratio = sig_true_positive / (edge_positive - tot_true_positive)
 
         if log:
             current_lr = self.optimizers().param_groups[0]["lr"]
@@ -214,15 +158,9 @@ class GNNBase(LightningModule):
                 {
                     "val_loss": loss,
                     "current_lr": current_lr,
-                    "sig_eff": sig_eff,
-                    "sig_pur": sig_pur,
-                    "sig_auc": sig_auc,
-                    "tot_eff": tot_eff,
-                    "tot_pur": tot_pur,
-                    "tot_auc": tot_auc,
-                    "double_auc": double_auc,
-                    "custom_f1": custom_f1,
-                    "sig_fake_ratio": sig_fake_ratio,
+                    "eff": sig_eff,
+                    "pur": sig_pur,
+                    "auc": sig_auc,
                 },
                 sync_dist=True,
             )
@@ -231,39 +169,21 @@ class GNNBase(LightningModule):
 
     def shared_evaluation(self, batch, batch_idx, log=True):
 
-        truth = batch[self.hparams["truth_key"]]
+        truth = batch[self.hparams["truth_key"]].bool()
+        edges = batch.edge_index
         
-        if ("train_purity" in self.hparams.keys()) and (
-            self.hparams["train_purity"] > 0
-        ):
-            edge_sample, truth_sample, sample_indices = purity_sample(
-                truth, batch.edge_index, self.hparams["train_purity"]
-            )
-        else:
-            edge_sample, truth_sample, sample_indices = batch.edge_index, truth, torch.arange(batch.edge_index.shape[1])
-            
-        edge_sample, truth_sample, sample_indices = self.handle_directed(batch, edge_sample, truth_sample, sample_indices)
-
         weight = (
             torch.tensor(self.hparams["weight"])
             if ("weight" in self.hparams)
-            else torch.tensor((~truth_sample.bool()).sum() / truth_sample.sum())
+            else torch.tensor((~truth.bool()).sum() / truth.sum())
         )
         
         input_data = self.get_input_data(batch)
-        output = self(input_data, edge_sample).squeeze()
+        output = self(input_data, edges).squeeze()
 
-        positive_loss = F.binary_cross_entropy_with_logits(
-            output[truth_sample], torch.ones(truth_sample.sum()).to(self.device)
-        )
+        loss = self.get_loss(output, truth, weight)
 
-        negative_loss = F.binary_cross_entropy_with_logits(
-            output[~truth_sample], torch.zeros((~truth_sample).sum()).to(self.device)
-        )
-
-        loss = positive_loss*weight + negative_loss
-
-        preds = self.log_metrics(output, sample_indices, batch, loss, log)
+        preds = self.log_metrics(output, batch, loss, log)
 
         return {"loss": loss, "preds": preds, "score": torch.sigmoid(output)}
 
@@ -311,35 +231,3 @@ class GNNBase(LightningModule):
         # update params
         optimizer.step(closure=optimizer_closure)
         optimizer.zero_grad()
-
-        
-class LargeGNNBase(GNNBase):
-    def __init__(self, hparams):
-        super().__init__(hparams)
-
-    def setup(self, stage):
-        # Handle any subset of [train, val, test] data split, assuming that ordering
-
-        self.trainset, self.valset, self.testset = [
-            LargeDataset(
-                self.hparams["input_dir"],
-                subdir,
-                split,
-                self.hparams
-            )
-            for subdir, split in zip(self.hparams["datatype_names"], self.hparams["datatype_split"])
-        ]
-
-        if (
-            (self.trainer)
-            and ("logger" in self.trainer.__dict__.keys())
-            and ("_experiment" in self.logger.__dict__.keys())
-        ):
-            self.logger.experiment.define_metric("val_loss", summary="min")
-            self.logger.experiment.define_metric("sig_auc", summary="max")
-            self.logger.experiment.define_metric("tot_auc", summary="max")
-            self.logger.experiment.define_metric("sig_fake_ratio", summary="max")
-            self.logger.experiment.define_metric("custom_f1", summary="max")
-            self.logger.experiment.log({"sig_auc": 0})
-            self.logger.experiment.log({"sig_fake_ratio": 0})
-            self.logger.experiment.log({"custom_f1": 0})

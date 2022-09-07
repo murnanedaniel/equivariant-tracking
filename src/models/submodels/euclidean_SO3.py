@@ -1,0 +1,131 @@
+import torch
+
+import torch.nn as nn
+from torch_scatter import scatter_add, scatter_mean, scatter_max
+
+from ..utils import euclidean_feats, make_mlp
+from ..gnn_base import GNNBase
+
+class EB(nn.Module):
+    # TODO: Add support for scalar quantities
+    def __init__(self, n_hidden: int = 32, nb_node_layer : int = 2, c_weight: float = 1.0, initial: bool = False) -> None:
+        super(EB, self).__init__()
+        # dims for norm & inner product + (delr, delphi, delz, delR)
+        if initial:
+            self.n_edge_attributes = 2 
+            self.n_scalar_attributes = n_hidden
+        else:
+            self.n_edge_attributes = 2 + 3*n_hidden
+            self.n_scalar_attributes = 2*n_hidden
+
+        # Controls the scale of x during updates
+        self.c_weight = c_weight
+
+        self.phi_e = make_mlp(
+            self.n_edge_attributes,
+            [n_hidden] * nb_node_layer,
+            layer_norm=True,
+        )
+
+        # MLP to generate attention weights
+        self.phi_x = make_mlp(
+            n_hidden,
+            [n_hidden] * nb_node_layer + [1],
+            layer_norm=True,
+        )
+
+        # MLP to generate weights for the messages
+        self.phi_m = make_mlp(
+            n_hidden,
+            [n_hidden] * nb_node_layer,
+            output_activation="Sigmoid",
+            layer_norm=True,
+        )
+
+        self.phi_s = make_mlp(
+            self.n_scalar_attributes,
+            [n_hidden] * nb_node_layer,
+            layer_norm=True,
+        )
+
+    def message(self, norms, dots, s_cat=None, e=None):
+        if s_cat is not None and e is not None:
+            e_ij = torch.cat([norms, dots, s_cat, e], dim=1)
+        else:
+            e_ij = torch.cat([norms, dots], dim=1)
+        e_ij = self.phi_e(e_ij) # The edge features
+        m_ij = self.phi_m(e_ij)
+        # m_ij = e_ij * w # The weighted edge features
+        return m_ij, e_ij
+
+    def x_model(self, x, edge_index, x_diff, m):
+        i, j = edge_index
+        update_val = x_diff * self.phi_x(m)
+        # LorentzNet authors clamp the update tensor as a precautionary measure
+        update_val = torch.clamp(update_val, min=-100, max=100)
+        x_agg = scatter_add(update_val, i, dim=0, dim_size=x.size(0))
+        x = x + x_agg * self.c_weight
+        return x
+
+    def s_model(self, s, edge_index, m):
+        i, j = edge_index
+        s_agg = scatter_mean(m, i, dim=0, dim_size=m.size(0))
+        if s is not None:
+            s_agg = self.phi_s(torch.cat([s, s_agg], dim=1))
+        else:
+            s_agg = self.phi_s(s_agg)
+        return s_agg
+
+    def forward(self, v, edge_index, s=None, e=None):
+        norms, dots, v_diff, s_cat = euclidean_feats(edge_index, v, s)
+        m, e = self.message(norms, dots, s_cat, e)
+        v_tilde = self.x_model(v, edge_index, v_diff, m)
+        s_tilde = self.s_model(s, edge_index, m)
+        return v_tilde, s_tilde, e
+
+
+class EuclidNet(GNNBase):
+    def __init__(self, hparams) -> None:
+        super().__init__(hparams)
+
+        self.n_hidden = self.hparams["n_hidden"]
+        self.n_layers = self.hparams["n_layers"]
+        self.n_graph_iters = self.hparams["n_graph_iters"]
+        self.n_output = self.hparams["n_output"]
+        self.c_weight = self.hparams["c_weight"]
+        self.n_input = self.hparams["n_input"]
+        if self.hparams["equi_output"]:
+            self.n_output = 3*self.n_hidden
+        else:
+            self.n_output = self.n_hidden + 2*self.hparams["vector_dim"]
+
+        self.EBs = nn.ModuleList(
+            [ EB(self.n_hidden, self.n_layers, self.c_weight, initial = True) ]
+            +
+            [
+                EB(n_hidden=self.n_hidden, nb_node_layer=self.n_layers, c_weight=self.c_weight)
+                for _ in range(1, self.n_graph_iters)
+            ]
+        )
+
+        # MLP to produce edge weights
+        self.edge_mlp = make_mlp(
+            self.n_output,
+            [self.n_hidden] * self.n_layers + [1],
+            layer_norm=True,
+        )
+
+    def forward(self, v, edge_index):
+
+        s, e = None, None
+
+        for i in range(self.n_graph_iters):                                                        
+            v, s, e = self.EBs[i](v, edge_index, s, e)
+
+        # m = torch.cat([v[edge_index[1]], v[edge_index[0]]], dim=1)
+        if self.hparams["equi_output"]:
+            m = torch.cat([s[edge_index[1]], s[edge_index[0]], e], dim=1)
+        else:
+            m = torch.cat([v[edge_index[1]], v[edge_index[0]], e], dim=1)
+
+        return self.edge_mlp(m)

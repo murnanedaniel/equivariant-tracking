@@ -23,6 +23,9 @@ class GraphDataset(Dataset):
     def get(self, idx):
         with np.load(self.graph_files[idx]) as f:
             x = torch.from_numpy(f['x'])
+            
+            # Convert to cartesian space
+            x[:, 0], x[:, 1] = x[:, 0]*torch.cos(np.pi*x[:, 1]), x[:, 0]*torch.sin(np.pi*x[:, 1])
             edge_attr = torch.from_numpy(f['edge_attr'])
             edge_index = torch.from_numpy(f['edge_index'])
             y = torch.from_numpy(f['y'])
