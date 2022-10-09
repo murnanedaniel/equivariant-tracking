@@ -30,13 +30,9 @@ def euclidean_feats(edge_index: Tensor, x: Tensor, s: Union[Tensor, None]) -> Li
     norms = norm(x_diff).unsqueeze(1)
     dots = dot(x[i], x[j]).unsqueeze(1)
     norms, dots = psi(norms), psi(dots)
-    
-    # Handle first GNN iteration
-    if s is not None:
-        s_cat = torch.cat([s[i], s[j]], dim=1)
-    else:
-        s_cat = None
 
+    # Handle first GNN iteration
+    s_cat = torch.cat([s[i], s[j]], dim=1) if s is not None else None
     return norms, dots, x_diff, s_cat
 
 

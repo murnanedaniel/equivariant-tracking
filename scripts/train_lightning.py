@@ -17,22 +17,11 @@ warnings.filterwarnings('ignore')
 
 sys.path.append("../")
 from src.models.submodels.interaction_gnn import InteractionGNN
-from src.models.submodels.euclidean_SO3 import EuclidNet
+from src.models.submodels.euclidnet import EuclidNet_SO3, EuclidNet_SO2, EuclidNet_SO2_Rec
 
 import wandb
 
-from pytorch_lightning.plugins import DDPPlugin, DDP2Plugin, DDPSpawnPlugin
-from pytorch_lightning.overrides import LightningDistributedModule
-
 from pytorch_lightning import seed_everything
-
-
-class CustomDDPPlugin(DDPPlugin):
-    def configure_ddp(self):
-        self.pre_configure_ddp()
-        self._model = self._setup_model(LightningDistributedModule(self.model))
-        self._register_ddp_hooks()
-        self._model._set_static_graph()
 
 
 def set_random_seed(seed):
@@ -77,7 +66,7 @@ def train(config, root_dir, checkpoint, random_seed):
         monitor="auc", mode="max", save_top_k=2, save_last=True
     )
     
-    wandb.init() # Need this to avoid logging to the same wandb run
+    wandb.init(project=default_configs["project"], reinit=True) # Need this to avoid logging to the same wandb run
     logger = WandbLogger(
         project=default_configs["project"],
         save_dir=default_configs["artifacts"],
@@ -92,7 +81,7 @@ def train(config, root_dir, checkpoint, random_seed):
     else:
         default_root_dir = os.path.join(".", root_dir)
         
-    accelerator = "gpu" if torch.cuda.is_available() else None
+    accelerator = "gpu" if torch.cuda.is_available() else "cpu"
 
     trainer = Trainer(
         accelerator = accelerator,
@@ -101,7 +90,6 @@ def train(config, root_dir, checkpoint, random_seed):
         auto_select_gpus=True,
         max_epochs=default_configs["max_epochs"],
         logger=logger,
-        strategy=CustomDDPPlugin(find_unused_parameters=False),
         callbacks=[checkpoint_callback],
         default_root_dir=default_root_dir
     )
@@ -111,9 +99,7 @@ def train(config, root_dir, checkpoint, random_seed):
 
 def test(model, trainer):
 
-    output = trainer.test(model)
-
-    return output
+    return trainer.test(model)
 
 def main():
     print(time.ctime())

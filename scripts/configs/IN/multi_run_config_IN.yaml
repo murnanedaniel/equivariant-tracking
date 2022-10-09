@@ -1,20 +1,23 @@
+# multirun configs
+num_runs: 5
+
 # training_configs:
 input_dir: /global/cfs/cdirs/m3443/usr/ameyat/hitgraphs/geometric/1p5
 artifacts: /global/cfs/cdirs/m3443/data/lightning_models/lightning_checkpoints
-project: EuclideanTracking_IN
+project: EuclideanTracking_MultiTrain_Study_1
 model: InteractionGNN
-data_split: [100, 100, 10]
-batch_size: 4
+data_split: [1000, 100, 100]
+batch_size: 20
 gpus: 1
 nodes: 1
 
-max_epochs: 3
+max_epochs: 200
 lr: 0.001
 factor: 0.8
 patience: 30
 warmup: 10
 edge_cut: 0.5
-weight: 0.3
+weight: 0.5
 
 # dataset_configs: 
 pt: 1.5
@@ -22,14 +25,14 @@ truth_key: y
 
 # model_configs:
 n_input: 3
-n_hidden: 32
+n_hidden: 8
 n_layers: 3
-n_graph_iters: 3
+n_graph_iters: 5
 n_output: 1
 c_weight: 0.1
-equi_output: True
-vector_dim: 3
+equi_output: False
+vector_dim: 
 layernorm: True 
-batchnorm: True
+batchnorm: False
 hidden_activation: SiLU
 aggregation: mean_sum

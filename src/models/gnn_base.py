@@ -1,5 +1,6 @@
 import sys, os
 import logging
+import warnings
 
 import pytorch_lightning as pl
 from pytorch_lightning import LightningModule
@@ -36,14 +37,12 @@ class GNNBase(LightningModule):
                     data_split=self.hparams["data_split"],
             )
 
-        if (
-            (self.trainer)
-            and ("logger" in self.trainer.__dict__.keys())
-            and ("_experiment" in self.logger.__dict__.keys())
-        ):
+        try:
             self.logger.experiment.define_metric("val_loss", summary="min")
             self.logger.experiment.define_metric("auc", summary="max")
             self.logger.experiment.log({"auc": 0})
+        except Exception:
+            warnings.warn("Failed to define figures of merit, due to logger unavailable")
 
     def train_dataloader(self):
         if self.trainset is not None:
@@ -169,14 +168,6 @@ class GNNBase(LightningModule):
 
     def test_step(self, batch, batch_idx):
         return self.shared_evaluation(batch, batch_idx, prefix="test/")
-
-    def test_step_end(self, output_results):
-
-        print("Step:", output_results)
-
-    def test_epoch_end(self, outputs):
-
-        print("Epoch:", outputs)
 
     def optimizer_step(
         self,

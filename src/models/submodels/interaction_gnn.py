@@ -35,8 +35,8 @@ class InteractionGNN(GNNBase):
 
         # Setup input network
         self.node_encoder = make_mlp(
-            hparams["spatial_channels"] + hparams["cell_channels"],
-            [hparams["hidden"]] * hparams["nb_node_layer"],
+            hparams["n_input"],
+            [hparams["n_hidden"]] * hparams["n_layers"],
             output_activation=hparams["output_activation"],
             hidden_activation=hparams["hidden_activation"],
             layer_norm=hparams["layernorm"],
@@ -45,8 +45,8 @@ class InteractionGNN(GNNBase):
 
         # The edge network computes new edge features from connected nodes
         self.edge_encoder = make_mlp(
-            2 * (hparams["hidden"]),
-            [hparams["hidden"]] * hparams["nb_edge_layer"],
+            2 * (hparams["n_hidden"]),
+            [hparams["n_hidden"]] * hparams["n_layers"],
             layer_norm=hparams["layernorm"],
             batch_norm=hparams["batchnorm"],
             output_activation=hparams["output_activation"],
@@ -55,8 +55,8 @@ class InteractionGNN(GNNBase):
 
         # The edge network computes new edge features from connected nodes
         self.edge_network = make_mlp(
-            3 * hparams["hidden"],
-            [hparams["hidden"]] * hparams["nb_edge_layer"],
+            3 * hparams["n_hidden"],
+            [hparams["n_hidden"]] * hparams["n_layers"],
             layer_norm=hparams["layernorm"],
             batch_norm=hparams["batchnorm"],
             output_activation=hparams["output_activation"],
@@ -65,8 +65,8 @@ class InteractionGNN(GNNBase):
 
         # The node network computes new node features
         self.node_network = make_mlp(
-            concatenation_factor * hparams["hidden"],
-            [hparams["hidden"]] * hparams["nb_node_layer"],
+            concatenation_factor * hparams["n_hidden"],
+            [hparams["n_hidden"]] * hparams["n_layers"],
             layer_norm=hparams["layernorm"],
             batch_norm=hparams["batchnorm"],
             output_activation=hparams["output_activation"],
@@ -75,8 +75,8 @@ class InteractionGNN(GNNBase):
 
         # Final edge output classification network
         self.output_edge_classifier = make_mlp(
-            3 * hparams["hidden"],
-            [hparams["hidden"]] * hparams["nb_edge_layer"] + [1],
+            3 * hparams["n_hidden"],
+            [hparams["n_hidden"]] * hparams["n_layers"] + [hparams["n_output"]],
             layer_norm=hparams["layernorm"],
             batch_norm=hparams["batchnorm"],
             output_activation=None,
